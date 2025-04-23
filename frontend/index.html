@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html ng-app="flagApp">
+<head>
+  <meta charset="UTF-8">
+  <title>Candidate Flagging</title>
+  <!-- AngularJS 1.x -->
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+  <!-- PrimeNG for AngularJS 1.x -->
+  <script src="https://unpkg.com/primeng/primeng.min.js"></script>
+  <link rel="stylesheet" href="https://unpkg.com/primeng/resources/themes/saga-blue/theme.css" />
+  <link rel="stylesheet" href="https://unpkg.com/primeng/resources/primeng.min.css" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body ng-controller="MainController as vm">
+  <div class="p-fluid p-formgrid p-grid">
+    <div class="p-field p-col-12">
+      <label for="name">Name</label>
+      <input id="name" type="text" pInputText ng-model="vm.candidate.name" />
+    </div>
+    <div class="p-field p-col-6">
+      <label for="nacExam">NAC Exam</label>
+      <input id="nacExam" type="number" pInputText ng-model="vm.candidate.nacExam" />
+    </div>
+    <div class="p-field p-col-6">
+      <label for="mccqe1">MCCQE1</label>
+      <input id="mccqe1" type="number" pInputText ng-model="vm.candidate.mccqe1" />
+    </div>
+    <div class="p-field p-col-6">
+      <label for="canExp">Canadian Experience (months)</label>
+      <input id="canExp" type="number" pInputText ng-model="vm.candidate.canadianExperience" />
+    </div>
+    <div class="p-field p-col-6">
+      <label for="gaps">Practice Gaps (months)</label>
+      <input id="gaps" type="number" pInputText ng-model="vm.candidate.practiceGaps" />
+    </div>
+    <div class="p-field p-col-12">
+      <button pButton type="button" label="Evaluate" ng-click="vm.evaluate()"></button>
+    </div>
+  </div>
+
+  <p-table [value]="vm.flags">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>Field</th>
+        <th>Message</th>
+        <th>Severity</th>
+        <th>Actions</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-flag let-rowIndex="rowIndex">
+      <tr ng-class="{'p-disabled': flag.acknowledged}">
+        <td>{{flag.field}}</td>
+        <td>{{flag.message}}</td>
+        <td>
+          <p-badge [value]="flag.severity" [severity]="flag.severity"></p-badge>
+        </td>
+        <td>
+          <button pButton type="button" icon="pi pi-check" class="p-button-success"
+                  ng-click="vm.override(rowIndex)"></button>
+          <button pButton type="button" icon="pi pi-times" class="p-button-danger"
+                  ng-click="vm.ack(rowIndex)"></button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+
+  <!-- AngularJS app scripts -->
+  <script src="app/app.js"></script>
+  <script src="app/services/evaluateService.js"></script>
+  <script src="app/controllers/mainController.js"></script>
+</body>
+</html>
+
