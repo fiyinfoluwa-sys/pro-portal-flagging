@@ -69,17 +69,17 @@ Note: Ensure the backend server is running before testing the frontend.
 
 ## Features
 
-- Submit entries for evaluation
-- Flag entries for review
-- Override and acknowledge flags
-- Save evaluations in localStorage
-- Communicate with backend via `$http.post`
+- Submit entries for evaluation through an intuitive interface.
+- Flag entries that require further review.
+- Override and acknowledge existing flags with reasoning.
+- Save evaluations locally using `localStorage`.
+- Communicate with backend via `$http.post` for data handling.
 
 ## Future Improvements
 
-- Add user authentication
-- Use a database for storing flags
-- Enable export/download of flagged results
+- Integrate user authentication for personalized sessions.
+- Replace `localStorage` with a database for persistent flag storage.
+- Add functionality to export or download flagged results as a file (e.g., CSV or JSON).
 
 ## Author
 
