@@ -1,6 +1,13 @@
 # Pro Portal Flagging Tool
 
-This project is a web application that allows users to evaluate and flag specific entries from a data portal using a simple frontend built with AngularJS and PrimeNG. It supports user actions such as evaluating data, marking flags, overriding flags, and tracking feedback.
+This web application was developed as part of a technical assessment for a potential internship at Touchstone Institute. The tool allows users to review entries from a data portal and flag them based on specific evaluation criteria.
+
+Built with AngularJS and PrimeNG, the application includes the following key features:
+- ✅ Flag and evaluate individual data entries
+- 🔄 Override or update existing flags
+- 📝 Submit user feedback linked to flagged entries
+
+The tool streamlines the review process and supports better data quality control through user-driven feedback.
 
 ## Project Structure
 
