@@ -85,6 +85,6 @@ Note: Ensure the backend server is running before testing the frontend.
 
 Fiyinfoluwa Oyewole  
 fiyinfoluwaoyewole@gmail.com  
-GitHub: [https://github.com/fiyinfoluwa-sys](https://github.com/fiyinfoluwa-sys)
+
 
 
